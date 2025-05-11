@@ -6,8 +6,8 @@
     <meta name="description" content="Lokesh Vashisht">
     <meta name="keywords" content="personal, portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->   
-    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <!-- Favicon -->
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" sizes="any" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.css"/>
@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="css/animate.css"/>
     <link rel="stylesheet" href="css/magnific-popup.css"/> 
     <link rel="stylesheet" href="css/superslides.css">
+    <link rel="stylesheet" href="css/owl.carousel.css"/> 
     
-    <!-- Google Web fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
@@ -38,7 +39,7 @@
         </div>
     </div>
     
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <div class="row">
             <div class="container">
                 <div class="logo">
@@ -47,7 +48,7 @@
                 <div class="responsive"><i data-icon="m" class="icon"></i></div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="smoothScroll">Home</a></li>
-                    <li><a href="#about" class="smoothScroll">About</a></li>>
+                    <li><a href="#about" class="smoothScroll">About</a></li>
               <!--  <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li> -->
                     <li><a href="/images/Resume.pdf" download="Resume-Lokesh-Vashisht.pdf">Resume</a></li>
                     <li><a href="#contact" class="smoothScroll">Contact</a></li>
@@ -102,7 +103,7 @@
             </div> <!-- Container end -->
             <div class="container-fluid gray-bg">
                 <div class="container what-can">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 feature">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 feature">
                         <i data-icon="Z" class="icon"></i>
                         <h3>GRAPHIC DESIGNER</h3>
                     </div>
@@ -122,26 +123,40 @@
             </div>
     </section>
     
-    <!--PORTFOLIO
+    <!--PORTFOLIO-->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
                 <h2>SHOWREEL</h2>
             </div>
             <!--Portfolio Items
-            <iframe style="text-align: center;"
-                    width="700" 
-                    height="400" 
-                    src="https://www.youtube.com/embed/_O6fmja9Nyw?si=5vgnzkKJ_4nwZ2Oz" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-            </iframe>
+             -->
+             <div class="owl-carousel owl-theme project-carousel">
+                 <div class="item">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_O6fmja9Nyw?si=5vgnzkKJ_4nwZ2Oz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>
+                 <div class="item">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>
+                  <div class="item">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 </div>
+                 <!-- Add more iframes for additional videos -->
+             </div>
         </div>
     </section>
-    -->
+    
+    <!-- Testimonials (Optional section) -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>CLIENT TESTIMONIALS</h2>
+            </div>
+            <!-- Add testimonial content here -->
+        </div>
+    </section>
+    
+    <!-- CONTACT -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -183,12 +198,25 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script>
         //SUPER SLİDER
         $('#slides').superslides({
             animation: 'fade',
             play: 3000
         });    
+    </script>
+    <script>
+        // OWL CAROUSEL for project showreel
+        $('.project-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items:1, // Display one video at a time
+            autoplay:true,
+            autoplayTimeout:5000, // 5 seconds
+            autoplayHoverPause:true
+        });
     </script>
  
 </body>
